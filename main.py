@@ -50,8 +50,6 @@ if user_response.upper() == 'N':
 if (user_response.upper() != 'Y') and (user_response != 'N'):
     print("Error.")
 
-'''
-
 for i in range(5):
     print(i + 1)
 
@@ -71,3 +69,49 @@ while message != 'quit':
     message = input(prompt)
     if message != 'quit':
         print(message)
+
+# Let's try to streamline the design of this while loop.
+prompt = "\nTell me something, and I'll repeat it back to you."
+prompt += "\nEnter 'quit' to end the program. "
+message = ""
+while message != 'quit':
+    print(message)
+    message = input(prompt)
+
+# Use a flag in a while loop.
+prompt = "\nTell me something, and I'll "
+prompt += "repeat it back to you."
+prompt += "\nEnter 'quit' to end the program. "
+active = True
+while active:
+    message = input(prompt)
+    if message == 'quit':
+        active = False
+    else:
+        print(message)
+
+# Let's try to streamline.
+prompt = "\nTell me something, and I'll "
+prompt += "repeat it back to you."
+prompt += "\nEnter 'quit' to end the program. "
+active = True
+message = ""
+while active:
+    print(message)
+    message = input(prompt)
+    if message == 'quit':
+        active = False
+# We eliminated the need for a false block.
+# We used if rather than if-else.
+
+'''
+
+# Use break to exit a while loop.
+prompt = "\nWhat cities have you visited?"
+prompt += "\nEnter 'quit' when you're done. "
+while True:
+    city = input(prompt)
+    if city == 'quit':
+        break
+    else:
+        print(f"I've been to {city}!")
